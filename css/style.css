@@ -10,4 +10,454 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
+    background: url('../images/backgroundBuilding.png') center/cover no-repeat fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background: transparent;
+    transition: 0.3s ease;
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* stanje kada se skroluje */
+.header.scrolled {
+    background: rgba(17, 17, 17, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* LOGO */
+.logo img {
+    height: 40px;   /* kontrola veličine */
+    width: auto;
+    display: block;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #F8F8F8;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav a.active {
+    color: #D4AF37;
+}
+
+.nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #D4AF37;
+}
+
+.nav a:hover {
+    color: #D4AF37;
+}
+
+/* BUTTON */
+.btn {
+    background: #D4AF37;
+    color: #111111;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b8922f;
+    transform: translateY(-2px);
+}
+
+.btn, .hero-btn {
+    letter-spacing: 0.5px;
+}
+
+section {
+    padding: 140px 60px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* TAMNI PREKLOP (overlay) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* TEKST NA HERO SEKCIJI */
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    color: #F8F8F8;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    letter-spacing: 5px;
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* HERO BUTTON */
+.hero-btn {
+    padding: 12px 25px;
+    background: #D4AF37;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #b8922f;
+    transform: translateY(-3px);
+}
+
+/* SERVICES SECTION */
+.services {
+    padding: 100px 60px;
+    background: #111111;
+    color: #F8F8F8;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #D4AF37;
+    letter-spacing: 2px;
+}
+
+/* GRID */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+.service-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TEXT */
+.service-card h3 {
+    color: #D4AF37;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.service-card p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 60px 20px;
+    }
+}
+
+.why {
+    padding: 120px 60px;
+    text-align: center;
+    color: #fff;
+
+    /* ključna stvar */
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.why h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #D4AF37;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.why-item {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: 0.3s;
+}
+
+.why-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.why-item h3 {
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.service-card,
+.why-item {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.why-item:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact {
+    padding: 100px 60px;
+    background: #111111;
+    color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 40px;
+    color: #D4AF37;
+    margin-bottom: 60px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* FORM */
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid rgba(212,175,55,0.2);
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #D4AF37;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #b8922f;
+}
+
+/* INFO */
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info h3 {
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+.services, .why, .contact {
+    position: relative;
+}
+
+/* početno stanje */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+
+    width: 45px;
+    height: 45px;
+
+    background: #D4AF37;
+    border: none;
+    border-radius: 50%;
+
+    color: #111;
+    font-size: 20px;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.contact-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-sub {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* lista info */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* svaki red */
+.contact-line {
+    display: flex;
+    flex-direction: column;
+}
+
+/* label (Adresa, Telefon...) */
+.contact-line .label {
+    color: #D4AF37;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+}
+
+/* vrednost */
+.contact-line .value {
+    color: #ddd;
+    font-size: 15px;
+}
+
+.contact-form {
+    background: rgba(20, 20, 20, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
 }
