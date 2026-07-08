@@ -77,6 +77,13 @@ toTop.addEventListener("click", () => {
 (function(){
     emailjs.init({
         publicKey: "RJ5gDlCfE0JXNguxp",
+
+        blockHeadless: true,
+
+        limitRate: {
+            id: "aurum-form",
+            throttle: 10000
+        }
     });
 })();
 
@@ -88,6 +95,19 @@ const sendButton = document.getElementById("send-button");
 form.addEventListener("submit", function(event){
 
     event.preventDefault();
+
+    if(this.website.value !== "") {
+        return;
+    }
+
+    const captchaResponse = grecaptcha.getResponse();
+
+    if(captchaResponse.length === 0){
+
+        alert("Molimo potvrdite da niste robot.");
+
+        return;
+    }
 
     sendButton.disabled = true;
     sendButton.textContent = "Slanje...";
@@ -129,5 +149,40 @@ closeModal.addEventListener("click", function(){
     const modal = document.getElementById("success-modal");
 
     modal.classList.remove("active");
+
+});
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+
+hamburger.addEventListener("click", () => {
+     
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+
+    });
+
+});
+
+document.addEventListener("click", (e)=>{
+
+    if(
+        !mobileMenu.contains(e.target) &&
+        !hamburger.contains(e.target)
+    ){
+
+        mobileMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+
+    }
 
 });
