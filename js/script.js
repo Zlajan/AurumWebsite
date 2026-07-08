@@ -73,3 +73,61 @@ toTop.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+(function(){
+    emailjs.init({
+        publicKey: "RJ5gDlCfE0JXNguxp",
+    });
+})();
+
+
+const form = document.getElementById("contact-form");
+const sendButton = document.getElementById("send-button");
+
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    sendButton.disabled = true;
+    sendButton.textContent = "Slanje...";
+
+    emailjs.sendForm(
+        "service_42tmdpd",
+        "template_ut3kt1t",
+        this
+    )
+    .then(() => {
+
+        const modal = document.getElementById("success-modal");
+
+        modal.classList.add("active");
+
+        form.reset();
+
+        sendButton.disabled = false;
+        sendButton.textContent = "Pošalji poruku";
+
+    }, 
+    (error) => {
+
+        console.log(error);
+
+        alert("Došlo je do greške. Molimo pokušajte ponovo.");
+
+        sendButton.disabled = false;
+        sendButton.textContent = "Pošalji poruku";
+
+    });
+
+});
+
+const closeModal = document.getElementById("close-modal");
+
+closeModal.addEventListener("click", function(){
+
+    const modal = document.getElementById("success-modal");
+
+    modal.classList.remove("active");
+
+});

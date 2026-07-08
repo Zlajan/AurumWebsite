@@ -18,8 +18,6 @@
 
     <body>
 
-        <script src="js/script.js"></script>
-
         <header class="header">
 
         <div class="logo">
@@ -41,7 +39,7 @@
 
             <div class="hero-content">
 
-                <h1>AURUM</h1>
+                <img src="images/logoOriginal.png" alt="Aurum logo" class="hero-logo">
 
                 <p>Profesionalno upravljanje i održavanje objekata</p>
 
@@ -53,37 +51,37 @@
 
         <section class="services reveal" id="services">
 
-            <h2>Naše usluge</h2>
+            <h1>Naše usluge</h1>
 
             <div class="services-grid">
 
                 <div class="service-card">
-                    <h3>🏢 Upravnik zgrade</h3>
+                    <h2>Upravnik zgrade</h2>
                     <p>Profesionalno upravljanje stambenim i poslovnim objektima.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>🧹 Održavanje higijene</h3>
+                    <h2>Održavanje higijene</h2>
                     <p>Redovno i temeljno čišćenje zajedničkih prostorija.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>🔧 Tehničko održavanje</h3>
-                    <p>Brze intervencije i rešavanje kvarova u zgradama.</p>
+                    <h2>Veći radovi</h2>
+                    <p>Na osnovu prikupljenih ponuda organizujemo veće radove na objektu.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>📑 Administracija</h3>
+                    <h2>Administracija</h2>
                     <p>Upravljanje dokumentacijom, finansijama i izveštajima.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>🚨 Hitne intervencije</h3>
+                    <h2>Hitne intervencije</h2>
                     <p>Dostupni smo za hitne probleme 24/7.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>💰 Finansijsko upravljanje</h3>
+                    <h2>Finansijsko upravljanje</h2>
                     <p>Transparentno vođenje budžeta i troškova zgrade.</p>
                 </div>
 
@@ -93,27 +91,27 @@
 
         <section class="why reveal" id="about">
 
-            <h2>Zašto Aurum?</h2>
+            <h1>Zašto Aurum?</h1>
 
             <div class="why-grid">
 
                 <div class="why-item">
-                    <h3>✔ Pouzdanost</h3>
+                    <h2>Pouzdanost</h2>
                     <p>Uvek dostupni i odgovorni prema svakom objektu koji vodimo.</p>
                 </div>
 
                 <div class="why-item">
-                    <h3>✔ Transparentnost</h3>
+                    <h2>Transparentnost</h2>
                     <p>Svi troškovi i radovi su jasno prikazani i objašnjeni.</p>
                 </div>
 
                 <div class="why-item">
-                    <h3>✔ Brza reakcija</h3>
+                    <h2>Brza reakcija</h2>
                     <p>Hitne intervencije u najkraćem mogućem roku.</p>
                 </div>
 
                 <div class="why-item">
-                    <h3>✔ Iskustvo</h3>
+                    <h2>Iskustvo</h2>
                     <p>Rad sa stambenim i poslovnim objektima različite veličine.</p>
                 </div>
 
@@ -127,47 +125,69 @@
 
             <div class="contact-container">
 
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
 
-                    <input type="text" placeholder="Ime i prezime" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Telefon">
+                    <input type="text" name="name" placeholder="Ime i prezime" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="phone" placeholder="Telefon">
 
-                    <textarea placeholder="Poruka"></textarea>
+                    <textarea name="message" placeholder="Poruka"></textarea>
 
-                    <button type="submit">Pošalji poruku</button>
+                    <button type="submit" id="send-button">Pošalji poruku</button>
 
                 </form>
 
-                <div class="contact-info">
+            <div class="contact-info">
     
-    <h3>Aurum</h3>
-    <p class="contact-sub">Profesionalno upravljanje i održavanje objekata</p>
+            <h3>Aurum</h3>
+            <p class="contact-sub">Profesionalno upravljanje i održavanje objekata</p>
 
-        <div class="contact-details">
+                <div class="contact-details">
 
-            <div class="contact-line">
-                <span class="label">Adresa:</span>
-                <span class="value">Futoški put 14e, Novi Sad, Srbija</span>
-            </div>
+                    <div class="contact-line">
+                        <span class="label">Adresa:</span>
+                        <span class="value">Futoški put 14e, Novi Sad, Srbija</span>
+                    </div>
 
-            <div class="contact-line">
-                <span class="label">Telefon:</span>
-                <span class="value">+381 62 960 79 03</span>
-            </div>
+                    <div class="contact-line">
+                        <span class="label">Telefon:</span>
+                        <span class="value">+381 62 960 79 03</span>
+                    </div>
 
-            <div class="contact-line">
-                <span class="label">Email:</span>
-                <span class="value">office@aurumns.rs</span>
+                    <div class="contact-line">
+                        <span class="label">Email:</span>
+                        <span class="value">office@aurumns.rs</span>
+                    </div>
+
+                </div>
+
+        </section>
+
+        <div class="success-modal" id="success-modal">
+
+            <div class="success-box">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h3>Poruka poslata</h3>
+
+                <p>
+                    Hvala Vam na poverenju. 
+                    Kontaktiraćemo Vas u najkraćem mogućem roku.
+                </p>
+
+                <button id="close-modal">
+                    U redu
+                </button>
+
             </div>
 
         </div>
 
-    </div>
-
-            </div>
-
-        </section>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
 
     </body>
 
