@@ -169,6 +169,8 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
 
         mobileMenu.classList.remove("active");
 
+        hamburger.classList.remove("active");
+
     });
 
 });

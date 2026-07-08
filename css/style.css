@@ -963,3 +963,19 @@ section {
 .hamburger.active span:nth-child(3){
     transform: rotate(-45deg) translate(8px, -8px);
 }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active,
+.btn:focus {
+    background: #916923;
+    color: #111;
+    outline: none;
+}
+
+.hamburger:focus,
+.hamburger:active {
+    outline: none;
+}
