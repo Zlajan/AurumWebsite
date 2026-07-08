@@ -964,10 +964,6 @@ section {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
 .btn:active,
 .btn:focus {
     background: #916923;
@@ -978,4 +974,24 @@ section {
 .hamburger:focus,
 .hamburger:active {
     outline: none;
+}
+
+:root {
+    color-scheme: normal;
+}
+
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.btn {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.hamburger {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
