@@ -995,3 +995,17 @@ a {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
 }
+
+a.btn,
+a.hero-btn {
+    -webkit-appearance: none;
+    appearance: none;
+
+    background-color: #916923 !important;
+    color: #111111 !important;
+}
+
+a.btn:visited,
+a.hero-btn:visited {
+    color: #111111 !important;
+}
