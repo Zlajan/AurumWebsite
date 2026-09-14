@@ -113,7 +113,7 @@ form.addEventListener("submit", function(event){
     sendButton.textContent = "Slanje...";
 
     emailjs.sendForm(
-        "service_42tmdpd",
+        "service_39j690i",
         "template_ut3kt1t",
         this
     )
